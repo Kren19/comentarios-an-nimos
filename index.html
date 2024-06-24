@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comentarios Anónimos</title>
-<style>
-  /* Estilos básicos para el formulario y los comentarios */
-  .comment-section {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto; /* Centra el contenedor horizontalmente y da un margen superior/inferior */
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
-  }
-  .comment {
-    position: relative;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-  }
-  .comment .delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    color: red;
-  }
-  .hidden {
-    display: none;
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input[type="text"], textarea, select, button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  button:hover {
-    background-color: #0056b3;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios Anónimos</title>
+  <style>
+    /* Estilos básicos para el formulario y los comentarios */
+    .comment-section {
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    .comment {
+      position: relative;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+    .comment .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+      color: red;
+    }
+    .hidden {
+      display: none;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], textarea, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div class="comment-section">
@@ -80,11 +80,8 @@
   </div>
 
   <script>
-    // Identificador único para el usuario
-    const commenterId = Date.now();
-
-    // URL del servidor Node.js
-    const serverUrl = 'http://localhost:3000/comments';
+    // URL del servidor Node.js (reemplaza con la URL pública de tu servidor en producción)
+    const serverUrl = '/comments';
 
     // Función para manejar el cambio en la selección del tipo de comentario
     document.getElementById('commentType').addEventListener('change', function() {
@@ -107,12 +104,8 @@
       var commentType = document.getElementById('commentType').value;
       var comment = document.getElementById('comment').value;
 
-      // Crear un identificador único para el comentario (simulación)
-      var commentId = Date.now();
-
       // Crear un objeto para almacenar el comentario
       var newComment = {
-        commenterId: commenterId,
         username: commentType === 'nombre' ? username : '',
         comment: comment
       };
