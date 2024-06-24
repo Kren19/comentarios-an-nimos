@@ -4,12 +4,12 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Configuración de la conexión a MySQL (XAMPP)
+// Configuración de la conexión a MySQL
 const db = mysql.createConnection({
-  host: 'localhost',  // Host de tu servidor MySQL (puede ser 'localhost' si estás usando XAMPP)
-  user: 'root',       // Usuario de MySQL (por defecto en XAMPP es 'root')
-  password: '',       // Contraseña de MySQL (deja vacío si no has configurado una en XAMPP)
-  database: 'comentariosDB' // Nombre de la base de datos creada en phpMyAdmin
+  host: 'localhost',  // Cambia esto por la dirección de tu servidor MySQL
+  user: 'root',       // Usuario de MySQL
+  password: '',       // Contraseña de MySQL
+  database: 'comentariosDB'
 });
 
 // Conectar a la base de datos MySQL
@@ -54,7 +54,7 @@ app.delete('/comments/:id', (req, res) => {
   });
 });
 
-// Iniciar el servidor
+// Escuchar en el puerto especificado
 app.listen(port, () => {
   console.log(`Servidor iniciado en el puerto ${port}`);
 });
