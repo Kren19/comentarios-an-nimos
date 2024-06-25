@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",    // Script para iniciar el servidor Node.js
-    "build": "webpack --config webpack.config.js"  // Script para compilar el frontend con webpack
-  },
+    "start": "node server.js",   
+    "build": "webpack --config webpack.config.js"  
   "keywords": [],
   "author": "",
   "license": "ISC",
