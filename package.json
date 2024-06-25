@@ -3,22 +3,19 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",  
-    "build": "webpack --config webpack.config.js",  
-    "dev": "webpack serve --config webpack.config.js --mode development"  
+    "start": "node server.js",    // Script para iniciar el servidor Node.js
+    "build": "webpack --config webpack.config.js"  // Script para compilar el frontend con webpack
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Sistema de comentarios anónimos con Node.js y webpack",
-  "dependencies": {
-    "express": "^4.17.2",  
-    "mysql": "^2.18.1",    
-    "cors": "^2.8.5"       
-  },
+  "description": "",
   "devDependencies": {
-    "webpack": "^5.92.1",     
-    "webpack-cli": "^5.1.4",  
-    "webpack-dev-server": "^4.8.0"  
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
   }
 }
