@@ -1,40 +1,34 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
-  mode: 'production', // Cambia a 'production' en producción
-  entry: './server.js', // Nombre del archivo principal de entrada
+  entry: './src/index.js', // Ruta de tu archivo principal de entrada
   output: {
-    filename: 'bundle.js', // Nombre del archivo de salida
-    path: path.resolve(__dirname, 'dist'), // Carpeta donde se guardarán los archivos compilados
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'), // Carpeta de salida para el bundle
+    publicPath: '', // Ruta pública del bundle (si es necesario)
   },
   resolve: {
     fallback: {
-      http: require.resolve('stream-http'),
-      https: require.resolve('https-browserify'),
-      zlib: require.resolve('browserify-zlib'),
-      assert: require.resolve('assert'),
-      util: require.resolve('util'),
-      fs: false, // No incluir fs para el navegador
-      path: false, // No incluir path para el navegador
-      os: false, // No incluir os para el navegador
-      stream: require.resolve('stream-browserify'),
-      crypto: require.resolve('crypto-browserify'),
-      buffer: require.resolve('buffer/'),
-      querystring: require.resolve('querystring-es3'),
-      punycode: require.resolve('punycode'),
-      process: require.resolve('process/browser'),
-      assert: require.resolve('assert/'),
-      events: require.resolve('events/'),
-      constants: require.resolve('constants-browserify'),
-      util: require.resolve('util/'),
-      'async_hooks': require.resolve('async_hooks/'),
-      'string_decoder': require.resolve('string_decoder/'),
+      "path": require.resolve("path-browserify"),
+      "crypto": require.resolve("crypto-browserify"),
+      "stream": require.resolve("stream-browserify"),
+      "zlib": require.resolve("browserify-zlib"),
+      "buffer": require.resolve("buffer/"),
     },
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
-    }),
-  ],
+  module: {
+    rules: [
+      // Aquí puedes configurar reglas para cargar diferentes tipos de archivos si es necesario
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
+  },
 };
