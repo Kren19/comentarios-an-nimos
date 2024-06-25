@@ -1,16 +1,24 @@
 {
-  "name": "comentarios-anonimos",
+  "name": "comentarios-anónimos",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",  // Comando para iniciar el servidor Node.js
+    "build": "webpack --config webpack.config.js",  // Comando para construir el proyecto con webpack
+    "dev": "webpack serve --config webpack.config.js --mode development"  // Comando para modo desarrollo con webpack-dev-server
   },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mysql": "^2.18.1"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Sistema de comentarios anónimos con Node.js y webpack",
+  "dependencies": {
+    "express": "^4.17.2",  // Dependencia para el framework Express.js
+    "mysql": "^2.18.1",    // Dependencia para la conexión y consultas a MySQL
+    "cors": "^2.8.5"       // Dependencia para habilitar CORS en Express
+  },
+  "devDependencies": {
+    "webpack": "^5.92.1",     // Dependencia de desarrollo webpack
+    "webpack-cli": "^5.1.4",  // Dependencia de desarrollo webpack-cli
+    "webpack-dev-server": "^4.8.0"  // Dependencia de desarrollo webpack-dev-server
+  }
 }
