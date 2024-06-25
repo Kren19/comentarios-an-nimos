@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development', // o 'production'
-  entry: 'server.js', // ruta al archivo principal de tu aplicación
+  entry: './index.js', // ajusta la entrada al archivo donde se encuentra tu código de frontend
   output: {
     path: path.resolve(__dirname, 'dist'), // directorio de salida para los archivos compilados
     filename: 'bundle.js', // nombre del archivo compilado
