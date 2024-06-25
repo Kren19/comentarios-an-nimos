@@ -1,32 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  entry: './index.js', // Ruta de tu archivo principal de entrada
+  mode: 'development', // o 'production'
+  entry: './src/index.js', // ruta al archivo principal de tu aplicación
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'), // Carpeta de salida para el bundle
-    publicPath: '', // Ruta pública del bundle (si es necesario)
-  },
-  resolve: {
-    fallback: {
-      "path": require.resolve("path-browserify"),
-      "crypto": require.resolve("crypto-browserify"),
-      "stream": require.resolve("stream-browserify"),
-      "zlib": require.resolve("browserify-zlib"),
-      "buffer": require.resolve("buffer/"),
-    },
+    path: path.resolve(__dirname, 'dist'), // directorio de salida para los archivos compilados
+    filename: 'bundle.js', // nombre del archivo compilado
   },
   module: {
     rules: [
-      // Aquí puedes configurar reglas para cargar diferentes tipos de archivos si es necesario
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.js$/, // todas las extensiones de archivo .js
+        exclude: /node_modules/, // excluye la carpeta node_modules
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
+          loader: 'babel-loader', // utiliza babel-loader para transpilar archivos .js
         },
       },
     ],
