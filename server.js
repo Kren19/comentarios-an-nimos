@@ -6,9 +6,9 @@ const port = process.env.PORT || 3000;
 
 // Configuración de la conexión a MySQL
 const db = mysql.createConnection({
-  host: 'localhost',  // Cambia esto por la dirección de tu servidor MySQL
-  user: 'root',       // Usuario de MySQL
-  password: '',       // Contraseña de MySQL
+  host: 'localhost',
+  user: 'root',
+  password: '',
   database: 'comentariosDB'
 });
 
@@ -54,7 +54,8 @@ app.delete('/comments/:id', (req, res) => {
   });
 });
 
-// Escuchar en el puerto especificado
+// Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor iniciado en el puerto ${port}`);
 });
+
