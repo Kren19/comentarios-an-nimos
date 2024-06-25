@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development', // o 'production'
-  entry: './src/index.js', // ruta al archivo principal de tu aplicación
+  entry: './index.js', // ruta al archivo principal de tu aplicación
   output: {
     path: path.resolve(__dirname, 'dist'), // directorio de salida para los archivos compilados
     filename: 'bundle.js', // nombre del archivo compilado
