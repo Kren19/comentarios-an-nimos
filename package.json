@@ -16,9 +16,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
-    "mysql": "^2.18.1"
-  }
-   "dependencies": {
+    "mysql": "^2.18.1",
     "async_hooks": "^1.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
@@ -37,4 +35,3 @@
     "util": "^0.12.5"
   }
 }
-
