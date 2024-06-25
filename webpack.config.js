@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', // Ruta de tu archivo principal de entrada
+  entry: './index.js', // Ruta de tu archivo principal de entrada
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'), // Carpeta de salida para el bundle
